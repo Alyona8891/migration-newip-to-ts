@@ -1,28 +1,29 @@
-export interface Res {
-  status: string,
-  sources: string[],
-};
+export interface NewsSource {
+    status: string;
+    articles?: NewsItemEveryth[];
+    sources?: NewsItemSources[];
+}
 
-export interface Sources {
-  id: string,
-  name: string,
-  description: string,
-  url: string,
-  category: string,
-  language: string,
-  country: string,
-};
- type Source = {
-  name: string,
- }
-export interface NewsItem {
-  urlToImage: string,
-  author: string,
-  source: Source,
-  publishedAt: string,
-  title: string,
-  description: string,
-  url: string,
-  name: string,
-  id: string,
-};
+export interface NewsItemEveryth {
+    urlToImage: string;
+    author: string;
+    source: {
+        id: string;
+        name: string;
+    };
+    publishedAt: string;
+    title: string;
+    description: string;
+    url: string;
+    content: string;
+}
+
+export interface NewsItemSources {
+    id: string;
+    name: string;
+    description: string;
+    url: string;
+    category: string;
+    language: string;
+    country: string;
+}
