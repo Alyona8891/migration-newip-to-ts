@@ -1,14 +1,26 @@
-export interface res {
+export interface Res {
   status: string,
   sources: string[],
 };
 
-export interface sources {
+export interface Sources {
   id: string,
-  name: string[],
-  description: string[],
-  url: string[],
-  category: string[],
-  language: string[],
-  country: string[],
+  name: string,
+  description: string,
+  url: string,
+  category: string,
+  language: string,
+  country: string,
+};
+ type Source = {
+  name: string,
+ }
+export interface NewsItem {
+  urlToImage: string,
+  author: string,
+  source: Source,
+  publishedAt: string,
+  title: string,
+  description: string,
+  url: string,
 };
