@@ -1,5 +1,6 @@
 import './news.css';
 import { NewsItemEveryth } from '../../../types';
+import Mine from './image/mine.svg';
 
 class News {
     draw(data: NewsItemEveryth[]) {
@@ -19,7 +20,7 @@ class News {
 
             if (newsClone) {
                 const newsMetaPhotoEl = newsClone.querySelector('.news__meta-photo') as HTMLTemplateElement;
-                newsMetaPhotoEl.style.backgroundImage = `url(${item.urlToImage || 'img/news_placeholder.jpg'})`;
+                newsMetaPhotoEl.style.backgroundImage = `url(${item.urlToImage || Mine})`;
 
                 const author = item.author || item.source.name;
                 const newsMetaAuthorEl = newsClone.querySelector('.news__meta-author');
