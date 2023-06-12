@@ -16,9 +16,9 @@ class News {
                     newsClone.querySelector('.news__item')?.classList.add('alt');
                 }
             }
-            const newsMetaPhotoEl = document.querySelector('.news__meta-photo') as HTMLTemplateElement | null;
+            const newsMetaPhotoEl = document.querySelector('.news__meta-photo') as HTMLElement | null;
             if (newsMetaPhotoEl && typeof item !== 'string') {
-                newsMetaPhotoEl.style.backgroundImage = `url(${item.urlToImage || 'img/news_placeholder.jpg'})`;
+                newsMetaPhotoEl.style.backgroundImage = `url(${item.urlToImage})`;
             }
             if (newsClone) {
                 const author = item.author || item.source.name;
