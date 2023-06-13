@@ -1,9 +1,9 @@
 import './news.css';
-import { NewsItemEveryth } from '../../../types';
+import { NewsItemEverythReadOnly } from '../../../types';
 import Mine from './image/mine.svg';
 
 class News {
-    public draw(data: NewsItemEveryth[]): void {
+    public draw(data: NewsItemEverythReadOnly[]): void {
         const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
         const fragment = document.createDocumentFragment();
         const newsItemTemp = document.querySelector('#newsItemTemp') as HTMLTemplateElement;

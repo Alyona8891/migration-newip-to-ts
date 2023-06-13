@@ -29,6 +29,7 @@ export interface NewsItemEveryth {
     url: string;
     content: string;
 }
+export type NewsItemEverythReadOnly = Readonly<NewsItemEveryth>;
 
 export interface NewsItemSources {
     id: string;
