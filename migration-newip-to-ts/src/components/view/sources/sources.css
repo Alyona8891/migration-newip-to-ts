@@ -21,6 +21,17 @@
     cursor: pointer;
 }
 
+@media (max-width: 500px) {
+
+    .source__item {
+        transition: 0.25s;
+        padding: 1em 1em;
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
 .source__item:hover,
 .source__item:focus {
     border-color: #3fcc59;

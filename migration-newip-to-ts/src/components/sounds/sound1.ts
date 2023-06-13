@@ -8,8 +8,9 @@ export function playPauseSound(): void {
     backSound.volume = 0.1;
     backSound.autoplay = true;
     backSound.play();
+    backSound.loop = true;
     if (soundButton) {
-        soundButton.innerHTML = 'Pause relax music';
+        soundButton.innerHTML = 'Stop relax music';
         soundButton.classList.toggle('play');
     }
 }

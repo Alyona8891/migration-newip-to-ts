@@ -8,8 +8,9 @@
         "plugin:prettier/recommended"        
     ],
     "parserOptions": {
-        "ecmaVersion": 2020,
-        "sourceType": "module"
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "project": "tsconfig.json"
     },
     "env": {
         "es6": true,
