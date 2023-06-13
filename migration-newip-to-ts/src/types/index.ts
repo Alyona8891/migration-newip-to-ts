@@ -1,3 +1,8 @@
+type Source = {
+    id: string;
+    name: string;
+};
+
 export interface NewsSource {
     status: string;
     articles?: NewsItemEveryth[];
@@ -7,10 +12,7 @@ export interface NewsSource {
 export interface NewsItemEveryth {
     urlToImage: string;
     author: string;
-    source: {
-        id: string;
-        name: string;
-    };
+    source: Source;
     publishedAt: string;
     title: string;
     description: string;
@@ -26,4 +28,14 @@ export interface NewsItemSources {
     category: string;
     language: string;
     country: string;
+}
+
+export enum Endpoints {
+    'everything',
+    'sources',
+}
+
+export enum ErrorStatuses {
+    status1 = 401,
+    status2 = 404,
 }

@@ -1,3 +1,5 @@
+import { ErrorStatuses } from '../../types';
+
 class Loader {
     baseLink: string;
     options: Record<string, string>;
@@ -18,7 +20,7 @@ class Loader {
 
     errorHandler(res: Response): Response {
         if (!res.ok) {
-            if (res.status === 401 || res.status === 404)
+            if (res.status === ErrorStatuses.status1 || res.status === ErrorStatuses.status2)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
         }
