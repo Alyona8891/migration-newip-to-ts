@@ -44,12 +44,15 @@ footer {
     align-items: center;
     justify-content: center;
     display: flex;
+    text-align: center;
     justify-content: space-around;
+    flex: 33.33%;
 }
 footer .copyright {
     font-size: 14px;
     color: #333;
     text-align: center;
+    margin-right: 5px;
 }
 footer .copyright a {
     color: #444;
@@ -62,20 +65,27 @@ footer .copyright:before {
 }
 .gh-profile__link {
     color: #444;
+    margin-right: 5px;
 }
 .gh-profile__link:hover {
     color: #555;
 }
 .rs-logo__image {
+    flex: 33.33%;
     width: 60px;
     height: 60px;
     display: inline-block;
     transition: 0.3s;
 }
-.rs-logo__image:hover {
-    scale: 1.3;
-    transition: 0.3s;
+@media (min-width: 400px) {
+
+    .rs-logo__image:hover {
+        scale: 1.3;
+        transition: 0.3s;
+    }
+
 }
+
 .soundButton {
     background: none;
     border: 2px solid #30c5ff;
