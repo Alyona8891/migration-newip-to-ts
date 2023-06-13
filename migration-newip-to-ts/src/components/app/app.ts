@@ -3,15 +3,15 @@ import { AppView } from '../view/appView';
 import { NewsSource } from '../../types';
 
 class App {
-    controller: AppController;
-    view: AppView;
+    private controller: AppController;
+    private view: AppView;
 
     constructor() {
         this.controller = new AppController();
         this.view = new AppView();
     }
 
-    start(): void {
+    public start(): void {
         const sourcesEl = document.querySelector('.sources') as HTMLTemplateElement | null;
         if (sourcesEl) {
             sourcesEl.addEventListener('click', (e) =>

@@ -3,20 +3,20 @@ import Sources from './sources/sources';
 import { NewsSource } from '../../types';
 
 export class AppView {
-    news: News;
-    sources: Sources;
+    private news: News;
+    private sources: Sources;
 
     constructor() {
         this.news = new News();
         this.sources = new Sources();
     }
 
-    drawNews(data: NewsSource): void {
+    public drawNews(data: NewsSource): void {
         const values = data?.articles ? data?.articles : [];
         this.news.draw(values);
     }
 
-    drawSources(data: NewsSource): void {
+    public drawSources(data: NewsSource): void {
         const values = data?.sources ? data?.sources : [];
         this.sources.draw(values);
     }
