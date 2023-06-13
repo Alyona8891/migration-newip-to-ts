@@ -1,6 +1,6 @@
 import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
-import { NewsSource } from '../../types';
+import { INewsSource } from '../../types';
 
 class App {
     private controller: AppController;
@@ -15,13 +15,13 @@ class App {
         const sourcesEl = document.querySelector('.sources') as HTMLTemplateElement | null;
         if (sourcesEl) {
             sourcesEl.addEventListener('click', (e) =>
-                this.controller.getNews(e, (data?: NewsSource) => {
+                this.controller.getNews(e, (data?: INewsSource) => {
                     if (data) {
                         this.view.drawNews(data);
                     }
                 })
             );
-            this.controller.getSources((data?: NewsSource) => {
+            this.controller.getSources((data?: INewsSource) => {
                 if (data) {
                     this.view.drawSources(data);
                 }

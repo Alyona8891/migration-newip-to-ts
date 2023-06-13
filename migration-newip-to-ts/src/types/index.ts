@@ -3,14 +3,24 @@ type Source = {
     name: string;
 };
 
-export interface NewsSource {
+interface NewsSource {
     status: string;
-    articles?: NewsItemEveryth[];
-    sources?: NewsItemSources[];
+    articles: NewsItemEveryth[];
+    sources: NewsItemSources[];
 }
 
+export type INewsSource = Partial<NewsSource>;
+
+interface IT {
+    a: number;
+    b: string;
+    c: boolean;
+}
+
+type StringType = Pick<IT, 'b'>;
+
 export interface NewsItemEveryth {
-    urlToImage: string;
+    urlToImage: StringType;
     author: string;
     source: Source;
     publishedAt: string;
