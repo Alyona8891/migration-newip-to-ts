@@ -36,7 +36,7 @@ footer .copyright:before {
     content: '©';
 }
 .gh-profile__link {
-    color: #333;
+    color: #444;
 }
 .gh-profile__link:hover {
     color: #555;
