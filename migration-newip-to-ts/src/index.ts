@@ -6,9 +6,9 @@ import './global.css';
 
 const app = new App();
 app.start();
-soundButton.innerText = 'Play relax music';
-soundButton.addEventListener('click', function (): void {
-    if (soundButton.classList.contains('play')) {
+
+soundButton?.addEventListener('click', function (): void {
+    if (soundButton?.classList.contains('play')) {
         pauseSound();
     } else {
         playPauseSound();
