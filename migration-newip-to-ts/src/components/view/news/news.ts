@@ -6,10 +6,10 @@ class News {
     public draw(data: NewsItemEverythReadOnly[]): void {
         const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
         const fragment = document.createDocumentFragment();
-        const newsItemTemp = document.querySelector('#newsItemTemp') as HTMLTemplateElement;
+        const newsItemTemp: HTMLTemplateElement | null = document.querySelector('#newsItemTemp');
 
         news.forEach((item, idx) => {
-            const newsClone = newsItemTemp.content.cloneNode(true) as Element | null;
+            const newsClone = newsItemTemp?.content.cloneNode(true) as Element;
 
             if (idx % 2) {
                 if (newsClone) {
@@ -18,9 +18,10 @@ class News {
             }
 
             if (newsClone) {
-                const newsMetaPhotoEl = newsClone.querySelector('.news__meta-photo') as HTMLTemplateElement;
-                newsMetaPhotoEl.style.backgroundImage = `url(${item.urlToImage || Mine})`;
-
+                const newsMetaPhotoEl: HTMLTemplateElement | null = newsClone.querySelector('.news__meta-photo');
+                if (newsMetaPhotoEl) {
+                    newsMetaPhotoEl.style.backgroundImage = `url(${item.urlToImage || Mine})`;
+                }
                 const author = item.author || item.source.name;
                 const newsMetaAuthorEl = newsClone.querySelector('.news__meta-author');
                 if (newsMetaAuthorEl) {
@@ -54,7 +55,7 @@ class News {
                 fragment.append(newsClone);
             }
         });
-        const newsEl = document.querySelector('.news') as HTMLTemplateElement | null;
+        const newsEl: HTMLTemplateElement | null = document.querySelector('.news');
         if (newsEl) {
             newsEl.innerHTML = '';
             newsEl.appendChild(fragment);

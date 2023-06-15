@@ -17,18 +17,20 @@ class AppController extends AppLoader {
 
         while (target !== newsContainer) {
             if (target.classList.contains('source__item')) {
-                const sourceId = target.getAttribute('data-source-id') as string;
+                const sourceId: string | null = target.getAttribute('data-source-id');
                 if (newsContainer.getAttribute('data-source') !== sourceId) {
-                    newsContainer.setAttribute('data-source', sourceId);
-                    super.getResp(
-                        {
-                            endpoint: Endpoints[0],
-                            options: {
-                                sources: sourceId,
+                    if (typeof sourceId === 'string') {
+                        newsContainer.setAttribute('data-source', sourceId);
+                        super.getResp(
+                            {
+                                endpoint: Endpoints[0],
+                                options: {
+                                    sources: sourceId,
+                                },
                             },
-                        },
-                        callback
-                    );
+                            callback
+                        );
+                    }
                 }
                 return;
             }
