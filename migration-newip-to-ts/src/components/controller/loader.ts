@@ -1,4 +1,5 @@
 import { ErrorStatuses } from '../../types';
+import { getRespReturn } from '../../types';
 
 class Loader {
     private baseLink: string;
@@ -10,7 +11,7 @@ class Loader {
     }
 
     public getResp(
-        { endpoint, options = {} }: { endpoint: string; options?: Record<string, string> },
+        { endpoint, options = {} }: getRespReturn,
         callback = (): void => {
             console.error('No callback for GET response');
         }

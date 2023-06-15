@@ -3,6 +3,11 @@ type Source = {
     name: string;
 };
 
+export type getRespReturn = {
+    endpoint: string;
+    options?: Record<string, string>;
+};
+
 interface NewsSource {
     status: string;
     articles: NewsItemEveryth[];
